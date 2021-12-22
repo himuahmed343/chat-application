@@ -1,10 +1,10 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Chats } from "./components/Chats";
+import { Login } from "./components/Login";
+import { AuthProvider } from "./contexts/AuthContext";
 
-import { AuthProvider } from "./contexts/AuthContext"
 
-import {Chats} from "./components/Chats"
-import {Login} from "./components/Login"
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Router>
         <AuthProvider>
           <Routes>
-            <Route exact path="/chats" element={<Chats/>} />
-            <Route exact path="/" element={<Login/>} />
+            <Route exact path="/chats" element={<Chats />} />
+            <Route exact path="/" element={<Login />} />
           </Routes>
         </AuthProvider>
       </Router>
